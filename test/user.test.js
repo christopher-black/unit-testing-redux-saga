@@ -1,11 +1,13 @@
-import 'babel-polyfill'
-import { expect } from 'chai';
-import sinon from 'sinon';
+import 'babel-polyfill'         // Required for testing sagas
+import { expect } from 'chai';  // Used to create test conditions
+import sinon from 'sinon';      // Used to mock API requests
 import { all } from 'redux-saga/effects';
-import * as api from '../src/user.saga.js';
-import userReducer from '../src/user.reducer.js';
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
+
+// * allows us to call functions beyound the default
+import * as api from '../src/user.saga.js';
+import userReducer from '../src/user.reducer.js';
 import { USER_ACTIONS } from '../src/user.actions';
 
 let store;
